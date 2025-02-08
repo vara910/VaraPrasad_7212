@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript Classes</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            background-color: #f4f4f4;
+            padding: 20px;
+        }
+        
+        .banner {
+            font-size: 24px;
+            font-weight: bold;
+            color: white;
+            background-color: #007bff;
+            padding: 10px;
+            display: inline-block;
+            border-radius: 5px;
+            animation: slide 5s linear infinite;
+        }
+
+        @keyframes slide {
+            0% { transform: translateX(-50%); }
+            100% { transform: translateX(50%); }
+        }
+
+        .container {
+            background: white;
+            padding: 20px;
+            max-width: 400px;
+            margin: 20px auto;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+        }
+
+        label {
+            font-weight: bold;
+            display: block;
+            margin-top: 10px;
+        }
+
+        input {
+            width: 100%;
+            padding: 8px;
+            margin: 5px 0;
+            border-radius: 4px;
+            border: 1px solid #ccc;
+        }
+
+        button {
+            background-color: #28a745;
+            color: white;
+            padding: 10px;
+            border: none;
+            width: 100%;
+            margin-top: 10px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+
+        button:hover {
+            background-color: #218838;
+        }
+
+        #output {
+            margin-top: 15px;
+            font-weight: bold;
+            color: #333;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Moving banner text -->
+    <div class="banner">I AM LEARNING JAVASCRIPT</div>
+
+    <!-- User Input Form -->
+    <div class="container">
+        <label for="name">Name:</label>
+        <input id="name" type="text" placeholder="Enter your name">
+        
+        <label for="age">Age:</label>
+        <input id="age" type="text" placeholder="Enter your age">
+        
+        <button onclick="submitForm()">Click Here to Submit</button>
+
+        <div id="output"></div>
+    </div>
+
+    <script>
+        function submitForm() {
+            let name = document.getElementById("name").value;
+            let age = document.getElementById("age").value;
+            
+            if (name === "" || age === "") {
+                document.getElementById("output").innerHTML = "Please fill in all fields!";
+                document.getElementById("output").style.color = "red";
+            } else {
+                document.getElementById("output").innerHTML = 
+                    `Hello, <b>${name}</b>! You are <b>${age}</b> years old.`;
+                document.getElementById("output").style.color = "red";
+            }
+        }
+    </script>
+
+</body>
+</html>
